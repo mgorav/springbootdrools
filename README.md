@@ -4,3 +4,6 @@ mvn clean install -DskipTests
 
 To run the application issue the following command:
 java -jar target/DataCleansingRules-0.0.1-SNAPSHOT.jar
+
+Open the browser and hit the below url:
+http://localhost:8080/swagger-ui.html
