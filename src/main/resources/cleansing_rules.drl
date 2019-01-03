@@ -1,0 +1,34 @@
+package com.nike.cleansing.rules;
+
+import com.nike.cleansing.rules.app.model.Person;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+rule "dataValidation"
+	when
+        person:Person(dob != null)
+    then
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        sdf.setLenient(false);
+        boolean isValid = true;
+        try {
+
+            //if not valid, it will throw ParseException
+            Date date = sdf.parse(person.getDob());
+            System.out.println(date);
+
+        } catch (ParseException e) {
+
+            System.out.println("INVALID DATE" + e.getMessage());
+            isValid = false;
+        }
+
+        if (isValid) {
+            System.out.println("VALID DATE");
+        }
+
+        person.setValid(isValid);
+end
