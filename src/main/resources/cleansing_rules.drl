@@ -1,6 +1,6 @@
-package com.nike.cleansing.rules;
+package com.gonnect.cleansing.rules;
 
-import com.nike.cleansing.rules.app.model.Person;
+import com.gonnect.cleansing.rules.app.model.Person;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
